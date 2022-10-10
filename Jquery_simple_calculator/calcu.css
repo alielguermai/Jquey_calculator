@@ -1,0 +1,26 @@
+body{
+    background-color: brown;
+}
+form{
+    border:3px solid black;
+    border-radius: 5%;
+    width: 305px;
+    height: 300px;
+    padding: 10px;
+    margin: 200px 420px;
+    background-color:lightblue
+}
+#screen{
+    width: 300px;
+    height: 50px;
+    text-align: right;
+    background-color: black;
+    color: white;
+    font-size: x-large;
+}
+input[type="button"],input[type="reset"]{
+    color: black;
+    background-color: gray;
+    width: 70px;
+    height: 45px;
+}

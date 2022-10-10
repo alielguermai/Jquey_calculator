@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery-3.6.0.js"></script>
+        <link rel="stylesheet" href="calcu.css">
+    </head>
+    <body>
+    <form>
+        <input type="text" id="screen" placeholder="0"><br><br>
+        <input type="button" class="butt" value="7">
+        <input type="button" class="butt" value="8">
+        <input type="button" class="butt" value="9">
+        <input type="button" class="butt" value="/">
+        <input type="button" class="butt" value="4">
+        <input type="button" class="butt" value="5">
+        <input type="button" class="butt" value="6">
+        <input type="button" class="butt" value="*">
+        <input type="button" class="butt" value="1">
+        <input type="button" class="butt" value="2">
+        <input type="button" class="butt" value="3">
+        <input type="button" class="butt" value="+">
+        <input type="button" class="butt" value=".">
+        <input type="button" class="butt" value="+">
+        <input type="button" class="butt" value="-">
+        <input type="reset"  value="C">
+        <input type="button" value="="  id="cal">
+        <input type="button" value="<-" id="eff">
+    </form>
+    </body>
+    <script>
+        $(document).ready(function(){
+            $(".butt").click(function(e){
+                e.preventDefault();
+      $("#screen").val($("#screen").val()+$(this).val());
+    });
+    $("#cal").click(function(){
+        try{
+            var r = eval($("#screen").val());
+            $("#screen").val(r);
+            $("#screen").css({"background-color":"green"});
+        }
+        catch(err){
+            $("#screen").val("syntax Error !");
+            $("#screen").css({"background-color":"red"});
+        }
+    });
+    $("#eff").click(function(){
+        $("#screen").val(($("#screen").val()).slice(0, -1));
+    });
+    $(":reset").click(function(){
+        $("#screen").css({"background-color":"black"});
+    });
+        });
+        </script>
+</html>
